@@ -36,6 +36,7 @@ def heap_sort(sequence: list) -> list:
         largest = index
         left_index = 2 * index + 1
         right_index = 2 * index + 2
+
         if left_index < heap_size and seq[left_index] > seq[largest]:
             largest = left_index
         if right_index < heap_size and seq[right_index] > seq[largest]:
@@ -47,7 +48,7 @@ def heap_sort(sequence: list) -> list:
     length = len(_sequence)
     for i in range(length // 2 - 1, -1, -1):
         heapify(_sequence, i, length)
-    for i in range(length - 1, 0, -1):
+    for i in range(length - 1, -1, -1):
         _sequence[0], _sequence[i] = _sequence[i], _sequence[0]
         heapify(_sequence, 0, i)
     return _sequence
